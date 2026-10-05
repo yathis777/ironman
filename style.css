@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --display: #0b1220;
+    --btn: #334155;
+    --btn-hover: #475569;
+    --operator: #2563eb;
+    --operator-hover: #1d4ed8;
+    --equals: #16a34a;
+    --equals-hover: #15803d;
+    --action: #64748b;
+    --text: #f8fafc;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    padding: 16px;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 360px;
+    background: var(--panel);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.display {
+    background: var(--display);
+    color: var(--text);
+    font-size: 2.4rem;
+    text-align: right;
+    padding: 20px 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    min-height: 84px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 20px 0;
+    font-size: 1.4rem;
+    border-radius: 12px;
+    background: var(--btn);
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-operator {
+    background: var(--operator);
+}
+
+.btn-operator:hover {
+    background: var(--operator-hover);
+}
+
+.btn-action {
+    background: var(--action);
+}
+
+.btn-equals {
+    background: var(--equals);
+    grid-row: span 2;
+}
+
+.btn-equals:hover {
+    background: var(--equals-hover);
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+/* Small screens: slightly reduce sizes for comfortable tapping */
+@media (max-width: 400px) {
+    .display {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 16px 0;
+        font-size: 1.2rem;
+    }
+}
